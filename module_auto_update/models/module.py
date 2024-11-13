@@ -127,9 +127,9 @@ class Module(models.Model):
             overwrite_existing_translations,
         )
 
-        tools.config[
-            "overwrite_existing_translations"
-        ] = overwrite_existing_translations
+        tools.config["overwrite_existing_translations"] = (
+            overwrite_existing_translations
+        )
 
         _logger.info("Updating modules list...")
         self.update_list()
