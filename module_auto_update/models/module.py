@@ -178,8 +178,8 @@ class Module(models.Model):
         if partial_modules:
             raise IncompleteUpgradeError(
                 "Checksum upgrade successful "
-                "but incomplete for the following modules: %s"
-                % ",".join(partial_modules.mapped("name"))
+                "but incomplete for the following modules: "
+                f"{','.join(partial_modules.mapped('name'))}"
             )
 
         _logger.info("Checksum upgrade complete.")
